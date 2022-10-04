@@ -19,15 +19,8 @@ function App() {
           <Route path="google" element={<Google />} />
 
           {/* About */}
-          <Route
-            path="about"
-            element={
-              <ProtectedRoute>
-                <About />
-              </ProtectedRoute>
-            }
-          ></Route>
-
+          <Route path="about" element={<About />}></Route>
+          <Route path="admin" element={<Admin />} />
           {/* Once Log In */}
           <Route
             path="profile"

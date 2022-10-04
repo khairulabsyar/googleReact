@@ -85,7 +85,7 @@ function SignInSignUp() {
                 firstName: yup
                   .string()
                   .max(15, ` You really have a long name huh, long live`)
-                  .required(" Hey, dont you remember your name at birth?"),
+                  .required(" Hey, dont you remember your name since birth?"),
                 password: yup
                   .string()
                   .required(" Use password generator if you're lazy")

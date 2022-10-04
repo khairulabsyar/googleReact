@@ -6,21 +6,24 @@ import reportWebVitals from "./reportWebVitals";
 import { AuthProvider, DarkModeProvider, DialogProvider } from "./Providers";
 import { Provider as ReduxProvider } from "react-redux";
 import store from "./Services/Reducers";
+import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <DarkModeProvider>
-        <ReduxProvider store={store}>
-          <AuthProvider>
-            <DialogProvider>
-              <App />
-            </DialogProvider>
-          </AuthProvider>
-        </ReduxProvider>
-      </DarkModeProvider>
-    </BrowserRouter>
+    <DarkModeProvider>
+      <BrowserRouter>
+        <QueryClientProvider client={new QueryClient()}>
+          <ReduxProvider store={store}>
+            <AuthProvider>
+              <DialogProvider>
+                <App />
+              </DialogProvider>
+            </AuthProvider>
+          </ReduxProvider>
+        </QueryClientProvider>
+      </BrowserRouter>
+    </DarkModeProvider>
   </React.StrictMode>
 );
 
